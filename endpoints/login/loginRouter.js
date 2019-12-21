@@ -9,33 +9,38 @@ const Users = require("./login-model.js");
 router.post("/", (req, res) => {
   const { username, password } = req.body;
   if (username && password) {
-    Users.findUser(username).then(user => {
-      if (user) {
-        console.log(user);
-        if (bcrypt.compareSync(req.body.password, user.password)) {
-          const token = generateToken(user);
-          res.status(200).json({
-            token,
-            user: {
-              username: user.username,
-              city: user.city,
-              state: user.state,
-              phone: user.phone,
-              email: user.email,
-              address: user.address
-            }
-          });
+    Users.findUser(username)
+      .then(user => {
+        if (user) {
+          if (bcrypt.compareSync(req.body.password, user.password)) {
+            const token = generateToken(user);
+            res.status(200).json({
+              token,
+              user: {
+                username: user.username,
+                city: user.city,
+                state: user.state,
+                phone: user.phone,
+                email: user.email,
+                address: user.address
+              }
+            });
+          } else {
+            res.status(400).json({
+              message: "username or password is incorrect!"
+            });
+          }
         } else {
           res.status(400).json({
             message: "username or password is incorrect!"
           });
         }
-      } else {
-        res.status(400).json({
-          message: "username or password is incorrect!"
+      })
+      .catch(error => {
+        res.status(500).json({
+          message: "error getting the user"
         });
-      }
-    });
+      });
   } else {
     res.status(404).json({
       message: "Please Provide username and password !"
@@ -44,12 +49,11 @@ router.post("/", (req, res) => {
 });
 
 function generateToken(user) {
-  console.log(user);
   const payload = {
     username: user.username
   };
 
-  const secret = "is it secret, is it safe?";
+  const secret = process.env.JWT_SECRET || "is it secret, is it safe?";
 
   const options = {
     expiresIn: "1d"
