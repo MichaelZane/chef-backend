@@ -43,6 +43,27 @@
             
 
    # Login User
+   ###Users for Test: 
+   
+   
+    | field        | metadata           | 
+   | -------------|:-------------:| 
+   | username     |     test3  | 
+   | password     |     test3   |
+   
+   
+   | field        | metadata           | 
+   | -------------|:-------------:| 
+   | username     |     test4  | 
+   | password     |     test4   |
+   
+   
+    | field        | metadata           | 
+   | -------------|:-------------:| 
+   | username     |     test5  | 
+   | password     |     test5   |
+   
+   
    
    EndPoint
    
