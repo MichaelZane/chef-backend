@@ -22,10 +22,10 @@
    New User Object: 
    
       | field        | metadata           | 
-| ------------- |:-------------:| -----:|
-| username      | Required and Unique | 
-| password      | Required      | 
-| email | Required and Unique      |  
+      | ------------- |:-------------:| 
+      | username      | Required and Unique | 
+      | password      | Required            | 
+      | email         | Required and Unique |  
    
    
    
