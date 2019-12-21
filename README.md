@@ -11,6 +11,16 @@
    EndPoint :
 
 
+| Method        | EndPoint           | 
+| ------------- |:-------------:| 
+| POST      | api/auth/register|
+
+
+
+
+
+
+
                       
                                 |  Method|EndPoint |
                                 |---|---|
