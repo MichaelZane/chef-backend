@@ -1,4 +1,3 @@
-# Back-End
 # Chef Portfolio team
 
 ## Endpoints
@@ -6,7 +5,9 @@
 ### All the endpoints start with https://chefportfolio10.herokuapp.com/
 
 
-                                  # Register New User
+                                 
+   # Register New User
+   
 EndPoint :
 
                       ------------------------------------------------------
