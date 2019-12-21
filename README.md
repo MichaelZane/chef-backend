@@ -11,6 +11,8 @@
    EndPoint :
 
 
+
+
 | Method        | EndPoint           | 
 | ------------- |:-------------:| 
 | POST      | api/auth/register|
@@ -20,6 +22,9 @@
                         
                                                               
    New User Object: 
+   
+   
+   
    
      | field        | metadata           | 
 | ------------- |:-------------:| 
