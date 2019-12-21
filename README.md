@@ -21,11 +21,10 @@
                                                               
    New User Object: 
    
-      | field        | metadata           | 
-      | ------------- |:-------------:| 
-      | username      | Required and Unique | 
-      | password      | Required            | 
-      | email         | Required and Unique |  
+     | field        | metadata           | 
+| ------------- |:-------------:| 
+| POST      | api/auth/register|
+
    
    
    
