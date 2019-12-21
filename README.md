@@ -49,7 +49,7 @@
    
    Method        |           EndPoint
    | -------------|:-------------:| 
-    POST         |       api/auth/login
+   | POST         |  api/auth/login|
                    
                        
    
