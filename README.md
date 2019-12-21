@@ -26,9 +26,9 @@
    
    
    
-     | field        | metadata           | 
-     | ------------- |:-------------:| 
-     | POST      | api/auth/register|
+   | field        | metadata           | 
+   | -------------|:-------------:| 
+   | POST      | api/auth/register|
 
    
    
