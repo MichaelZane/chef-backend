@@ -59,8 +59,8 @@
    
    | field        | metadata           | 
    | -------------|:-------------:| 
-    | username            |     Required| 
-   | password             |     Required
+   | username     |     Required  | 
+   | password     |     Required   |
    
    
    
