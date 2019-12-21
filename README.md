@@ -10,10 +10,11 @@
    
    EndPoint :
 
+
                       
-                                |  Method      |       EndPoint |
+                                |  Method|EndPoint |
                                 |---|---|
-                                |  POST        |     api/auth/register |
+                                | POST |api/auth/register |
                                   
                                   
                                   
