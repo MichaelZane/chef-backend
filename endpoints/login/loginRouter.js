@@ -17,6 +17,7 @@ router.post("/", (req, res) => {
             res.status(200).json({
               token,
               user: {
+                id: user.id,
                 username: user.username,
                 city: user.city,
                 state: user.state,
