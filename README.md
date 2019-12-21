@@ -28,6 +28,7 @@
    
    | field        | metadata           | 
    | -------------|:-------------:| 
+   |  username   | Required and Unique
    |   password    |  Required   |
    |    email       |  Required and Unique |
    |   phone       |  Optional and Unique  |
