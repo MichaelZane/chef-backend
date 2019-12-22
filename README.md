@@ -125,4 +125,10 @@
 
 
 
-   
+
+## BackEnd Build with Node.js
+   ### Libraries:
+   * express
+   * knex
+   * bycrypt
+   * jsonwebtoken
