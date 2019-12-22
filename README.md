@@ -111,7 +111,19 @@
  | -------------|:-------------:| ----------|
  | GET         |  api/auth/user/:id|  get all recipes
   | POST         |  api/auth/user/:id|  add new recipe
- 
+  
+  
+  
+  ### Recipe Object:
+  
+  
+  | field        | metadata           | 
+   | -------------|:-------------:| 
+   |  recipe_name   | Required 
+   |   ingredients    |  Required   |
+   |    instructions       |  Required  |
+
+
  
 ## Update/Delete Recipe
  * make a request with the id of the recipe to update or delete recipe.
