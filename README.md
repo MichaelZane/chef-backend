@@ -101,7 +101,7 @@
    
  # APIs with authorization:
  
- * must LogIn and have a token to make these requests:
+ ### must LogIn and have a token to make these requests:
  
  
  * make a request by the id of the user to get all the recipes of the user and add new recipe.
