@@ -111,5 +111,8 @@
  | -------------|:-------------:| ----------|
  | GET         |  api/auth/user/:id|  should be the id of the user
  
+ 
+ EndPoint: 
+ 
 
    
