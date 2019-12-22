@@ -90,7 +90,7 @@
    
    
    
-   ### EndPoint: To Show a recipe By Id without login.
+   * To Show the recipe By Id without login.
    
    
    Method        |           EndPoint
@@ -104,7 +104,7 @@
  * must LogIn and have a token to make these requests:
  
  
- EndPoint: make a request by the id of the user to get all the recipes of the user and add new recipe.
+ * make a request by the id of the user to get all the recipes of the user and add new recipe.
  
  
   Method        |       EndPoint | Description
