@@ -98,5 +98,16 @@
  | GET         |  api/recipes/:id|
                    
    
+   
+ # APIs with authorization:
+ 
+ * must LoggedIn and have a token to make these requests:
+ 
+ 
+ EndPoint: get all the recipes of the user
+   Method        |           EndPoint | Description
+ | -------------|:-------------:| ----------|
+ | GET         |  api/auth/user/:id|  should be the id of the user
+ 
 
    
