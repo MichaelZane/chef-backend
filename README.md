@@ -92,11 +92,11 @@
    
    
    
-   # Globel Recipes
+   # Global Recipes
    
    ### Endpoint: To Show all the recipes of the users without login.
    
-    Method        |           EndPoint
+   Method        |           EndPoint
    | -------------|:-------------:| 
    | GET         |  api/api/recipes|
    
@@ -105,9 +105,9 @@
    ### EndPoint: To Show a recipe By Id without login.
    
    
-       Method        |           EndPoint
-   | -------------|:-------------:| 
-   | GET         |  api/recipes/:id|
+   Method        |           EndPoint
+ | -------------|:-------------:| 
+ | GET         |  api/recipes/:id|
                    
    
 
