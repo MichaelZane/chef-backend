@@ -118,7 +118,7 @@
  
  
  
-   Method        |       EndPoint | Description
+ Method        |       EndPoint | Description
  | -------------|:-------------:| ----------|
  | PUT         |  api/auth/user/recipes/:id|  Update recipe
   | DELETE         |  api/auth/user/recipes/:id|   Delete recipe
