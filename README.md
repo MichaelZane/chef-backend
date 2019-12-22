@@ -82,7 +82,7 @@
    
    # Global Recipes
    
-   ### Endpoint: To Show all the recipes of the users without login.
+  * To Show all the recipes of the users without login.
    
    Method        |           EndPoint
    | -------------|:-------------:| 
