@@ -98,7 +98,7 @@
    
    Method        |           EndPoint
    | -------------|:-------------:| 
-   | GET         |  api/api/recipes|
+   | GET         |  api/recipes|
    
    
    
