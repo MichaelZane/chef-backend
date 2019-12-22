@@ -82,7 +82,7 @@
    
    # Global Recipes
    
-   ### Endpoint: To Show all the recipes of the users without login.
+  * To Show all the recipes of the users without login.
    
    Method        |           EndPoint
    | -------------|:-------------:| 
@@ -104,17 +104,29 @@
  ### must LogIn and have a token to make these requests:
  
  
- * make a request by the id of the user to get all the recipes of the user and add new recipe.
+ * make a request with the id of the user to get all the recipes of the user and add new recipe.
  
  
   Method        |       EndPoint | Description
  | -------------|:-------------:| ----------|
  | GET         |  api/auth/user/:id|  get all recipes
   | POST         |  api/auth/user/:id|  add new recipe
- 
+  
+  
+  
+  ### Recipe Object:
+  
+  
+  | field        | metadata           | 
+   | -------------|:-------------:| 
+   |  recipe_name   | Required 
+   |   ingredients    |  Required   |
+   |    instructions       |  Required  |
+
+
  
 ## Update/Delete Recipe
- * make a request by the id of the recipe to update or delete recipe.
+ * make a request with the id of the recipe to update or delete recipe.
  
  
  
@@ -125,4 +137,10 @@
 
 
 
-   
+
+### BackEnd Build with Node.js
+   ### Libraries:
+   * express
+   * knex
+   * bcryptjs
+   * jsonwebtoken
