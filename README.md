@@ -130,5 +130,5 @@
    ### Libraries:
    * express
    * knex
-   * bycryptjs
+   * bcryptjs
    * jsonwebtoken
