@@ -104,13 +104,13 @@
  * must LogIn and have a token to make these requests:
  
  
- EndPoint: get all the recipes of the user and add new recipe 
+ EndPoint: make a request by the id of the user to get all the recipes of the user and add new recipe.
  
  
   Method        |       EndPoint | Description
  | -------------|:-------------:| ----------|
- | GET         |  api/auth/user/:id|  id of the user / get all recipes
-  | POST         |  api/auth/user/:id|  id of the user / add new recipe
+ | GET         |  api/auth/user/:id|  get all recipes
+  | POST         |  api/auth/user/:id|  add new recipe
  
  
  EndPoint: 
