@@ -114,7 +114,7 @@
  
  
 ## Update/Delete Recipe
- * make a request by the id of the recipe to update or delete recipe.
+ * make a request with the id of the recipe to update or delete recipe.
  
  
  
