@@ -117,9 +117,12 @@
  * make a request by the id of the recipe to update or delete recipe.
  
  
+ 
    Method        |       EndPoint | Description
  | -------------|:-------------:| ----------|
  | PUT         |  api/auth/user/recipes/:id|  Update recipe
   | DELETE         |  api/auth/user/recipes/:id|   Delete recipe
+
+
 
    
