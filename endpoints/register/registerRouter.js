@@ -18,9 +18,11 @@ router.post("/", (req, res) => {
             .json({
               message: "register Completed"
             })
-            .catch(error => {
-              message: "error adding new user";
-            });
+            .catch(error =>
+              res.status(500).json({
+                message: "error adding new user"
+              })
+            );
         });
       } else {
         res.status(300).json({
