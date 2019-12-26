@@ -37,6 +37,8 @@
    |      state       |  Optional  |
    |     city        |  Optional   |
    |    address     |  Optional    |
+   |    zipcode     |  Optional    |
+
                     
    
    
