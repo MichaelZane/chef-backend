@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
             );
         });
       } else {
-        res.status(300).json({
+        res.status(400).json({
           message: "user is already exist"
         });
       }
