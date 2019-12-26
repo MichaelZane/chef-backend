@@ -13,18 +13,17 @@ router.post("/", (req, res) => {
     Users.findUser(req.body)
       .then(user => {
         if (!user) {
-          Users.addUSer(req.body).then(ids => {
-            res
-              .status(200)
-              .json({
+          Users.addUSer(req.body)
+            .then(ids => {
+              res.status(200).json({
                 message: "register Completed"
+              });
+            })
+            .catch(error =>
+              res.status(500).json({
+                message: "error adding new user"
               })
-              .catch(error =>
-                res.status(500).json({
-                  message: "error adding new user"
-                })
-              );
-          });
+            );
         } else {
           res.status(400).json({
             message: "user is already exist"
