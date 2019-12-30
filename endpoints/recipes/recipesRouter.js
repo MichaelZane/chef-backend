@@ -11,7 +11,7 @@ router.get("/:id", (req, res) => {
       if (recipes.length > 0) {
         res.status(200).json(recipes);
       } else {
-        res.status(404).json({
+        res.status(200).json({
           message: "no recipes"
         });
       }
