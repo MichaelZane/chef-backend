@@ -6,15 +6,10 @@ const Users = require("../login/login-model");
 
 // Get recipes for user
 router.get("/:id", (req, res) => {
-  Recipes.findRecipe(req.params.id)
+  Recipes.findRecipes(req.params.id)
     .then(recipes => {
-      if (recipes.length > 0) {
-        res.status(200).json(recipes);
-      } else {
-        res.status(404).json({
-          message: "no recipes"
-        });
-      }
+      console.log("try", recipes);
+      res.status(200).json(recipes);
     })
     .catch(error => {
       res.status(500).json({
@@ -28,17 +23,22 @@ router.post("/:id", (req, res) => {
   const { recipe_name, ingredients, instructions } = req.body;
   Users.findById(req.params.id)
     .then(user => {
+      console.log(user);
       if (user) {
         if (
           req.body.recipe_name &&
           req.body.ingredients &&
           req.body.instructions
         ) {
-          Recipes.addRecipe(req.body.recipe_name, req.params.id)
+          Recipes.addRecipe(
+            req.body.recipe_name,
+            req.body.mealtype,
+            req.params.id
+          )
             .then(id => {
               Recipes.addIngAndInst(req.body, id[0])
                 .then(id =>
-                  res.status(200).json({ message: "added new recipes" })
+                  res.status(200).json({ message: "added new recipe" })
                 )
                 .catch(error => {
                   res.status(500).json({
@@ -123,7 +123,10 @@ router.put("/recipes/:id", (req, res) => {
           )
             .then(update => {
               Recipes.updateRecipe(
-                { recipe_name: req.body.recipe_name },
+                {
+                  recipe_name: req.body.recipe_name,
+                  meal_type_id: req.body.mealtype
+                },
                 req.params.id
               )
                 .then(updaerecipe => {
@@ -136,7 +139,9 @@ router.put("/recipes/:id", (req, res) => {
                 });
             })
             .catch(erre => {
-              message: "error update recipe";
+              res.status(500).json({
+                message: "error update recipe ing"
+              });
             });
         } else {
           res.status(404).json({
