@@ -2,7 +2,7 @@
 
 ## Endpoints
 
-### All the endpoints start with https://chefportfolio10.herokuapp.com/
+
 
 
                                  
@@ -124,8 +124,22 @@
   | field        | metadata           | 
    | -------------|:-------------:| 
    |  recipe_name   | Required 
+   |    mealtype       |  Required  |
    |   ingredients    |  Required   |
    |    instructions       |  Required  |
+   
+   #### Mealtype :
+   
+   the Mealtype of the recipe object should be one of these values :
+   
+   | field        | value           | 
+   | -------------|:-------------:| 
+   | breakfast   | 1 
+   |    lunch      |  2  |
+   |   dinner    |  3   |
+   |    snack       |  4  |
+   |    dessert       |  5  |
+
 
 
  
