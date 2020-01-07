@@ -128,7 +128,9 @@
    |   ingredients    |  Required   |
    |    instructions       |  Required  |
    
-   ### Mealtype
+   #### Mealtype :
+   
+   the Mealtype of the recipe object should be one of these values :
    
    | field        | value           | 
    | -------------|:-------------:| 
