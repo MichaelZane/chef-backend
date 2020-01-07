@@ -2,7 +2,7 @@
 
 ## Endpoints
 
-### All the endpoints start with https://chefportfolio10.herokuapp.com/
+
 
 
                                  
@@ -124,6 +124,8 @@
   | field        | metadata           | 
    | -------------|:-------------:| 
    |  recipe_name   | Required 
+   |    mealtype       |  Required  |
+
    |   ingredients    |  Required   |
    |    instructions       |  Required  |
 
