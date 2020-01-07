@@ -4,40 +4,40 @@ exports.seed = function(knex) {
   return knex("users").then(function() {
     return knex("users").insert([
       {
-        firstname: "rowValue1",
-        lastname: "rowValue1",
-        username: "rowValue1",
-        password: bcrypt.hashSync("23", 12),
-        email: "ruwad1211idha@gmail.com",
-        phone: 1234,
+        firstname: "test1",
+        lastname: "test1",
+        username: "test1",
+        password: bcrypt.hashSync("test1", 12),
+        email: "test1@gmail.com",
+        phone: 11,
         city: "houston",
         state: "texas",
-        address: "216319bkjsbckjdsbckds",
-        zipcode: "123"
+        address: "test1",
+        zipcode: "11"
       },
       {
-        firstname: "rowValue1",
-        lastname: "rowValue1",
-        username: "rowValue2",
-        password: bcrypt.hashSync("23", 12),
-        email: "ruwadi1212d21ha@gmail.com",
-        phone: 12345,
+        firstname: "test2",
+        lastname: "test2",
+        username: "test2",
+        password: bcrypt.hashSync("test2", 12),
+        email: "test2@gmail.com",
+        phone: 1212,
         city: "houston",
         state: "texas",
-        address: "216319bkjsbckjdsbckds",
-        zipcode: "123"
+        address: "test2",
+        zipcode: "1212"
       },
       {
-        firstname: "rowValue1",
-        lastname: "rowValue1",
-        username: "rowValue3",
-        password: bcrypt.hashSync("23", 12),
-        email: "ruw231231a@gmail.com",
-        phone: 123213,
+        firstname: "test3",
+        lastname: "test3",
+        username: "test3",
+        password: bcrypt.hashSync("test3", 12),
+        email: "test3@gmail.com",
+        phone: 123123,
         city: "houston",
         state: "texas",
-        address: "216319bkjsbckjdsbckds",
-        zipcode: "123"
+        address: "test3",
+        zipcode: "123123"
       }
     ]);
   });
