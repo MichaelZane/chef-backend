@@ -125,7 +125,6 @@
    | -------------|:-------------:| 
    |  recipe_name   | Required 
    |    mealtype       |  Required  |
-
    |   ingredients    |  Required   |
    |    instructions       |  Required  |
 
