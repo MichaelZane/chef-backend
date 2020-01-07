@@ -23,7 +23,7 @@ function getAllRecipes() {
 }
 
 function addRecipe(name, meal_type_id, id) {
-  console.log(name, id);
+  console.log(name, id, meal_type_id);
   return db("recipes").insert(
     { recipe_name: name, user_id: id, meal_type_id: meal_type_id },
     "id"

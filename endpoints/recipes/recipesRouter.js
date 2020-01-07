@@ -23,6 +23,7 @@ router.post("/:id", (req, res) => {
   const { recipe_name, ingredients, instructions } = req.body;
   Users.findById(req.params.id)
     .then(user => {
+      console.log(user);
       if (user) {
         if (
           req.body.recipe_name &&
@@ -31,7 +32,7 @@ router.post("/:id", (req, res) => {
         ) {
           Recipes.addRecipe(
             req.body.recipe_name,
-            req.body.meal_type_id,
+            req.body.mealtype,
             req.params.id
           )
             .then(id => {
