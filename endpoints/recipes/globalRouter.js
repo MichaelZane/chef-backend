@@ -25,6 +25,10 @@ router.get("/:id", (req, res) => {
         Recipes.findIngAndInst(recipe.id)
           .then(ingAndInst => {
             res.status(200).json({
+              id: recipe.id,
+              recipe_name: recipe.recipe_name,
+              meal_type_id: recipe.meal_type_id,
+              mealtype: recipe.mealtype,
               ingredients: ingAndInst.ingredients,
               instructions: ingAndInst.instructions
             });

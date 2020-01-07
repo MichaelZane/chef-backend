@@ -56,10 +56,10 @@ function findRecipes(ids) {
 function recipeById(id) {
   console.log(id);
   return db("recipes")
-    .select("recipes.id", "recipe_name")
-    .where({ id })
+    .select("recipes.id", "recipe_name", "mealtype", "meal_type_id")
+    .join("meal_type", "meal_type_id", "meal_type.id")
+    .where({ "recipes.id": id })
     .first();
-  // .first();
 }
 
 function findIngAndInst(id) {
