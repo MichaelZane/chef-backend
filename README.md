@@ -127,6 +127,17 @@
    |    mealtype       |  Required  |
    |   ingredients    |  Required   |
    |    instructions       |  Required  |
+   
+   ### Mealtype
+   
+     | field        | value           | 
+   | -------------|:-------------:| 
+   | breakfast   | 1 
+   |    lunch       |  2  |
+   |   dinner    |  3   |
+   |    snack       |  4  |
+   |    dessert       |  5  |
+
 
 
  
