@@ -10,6 +10,14 @@ exports.up = function(knex) {
       .inTable("users")
       .onUpdate("CASCADE")
       .onDelete("RESTRICT");
+    tbl
+      .integer("meal_type_id")
+      // .unsigned()
+      .notNullable()
+      .references("id")
+      .inTable("meal_type");
+    // .onUpdate("CASCADE")
+    // .onDelete("RESTRICT");
   });
 };
 

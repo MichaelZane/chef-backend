@@ -20,19 +20,18 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   Recipes.recipeById(req.params.id)
     .then(recipe => {
+      console.log(recipe);
       if (recipe) {
-        console.log(recipe);
         Recipes.findIngAndInst(recipe.id)
           .then(ingAndInst => {
             res.status(200).json({
-              recipe_name: recipe.recipe_name,
               ingredients: ingAndInst.ingredients,
               instructions: ingAndInst.instructions
             });
           })
           .catch(error => {
-            res.status(500).json(error => {
-              message: "error getting the ingredients and instructions";
+            res.status(500).json({
+              message: "error getting the ingredients and instructions"
             });
           });
       } else {
