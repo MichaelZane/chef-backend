@@ -20,7 +20,6 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   Recipes.recipeById(req.params.id)
     .then(recipe => {
-      console.log(recipe);
       if (recipe) {
         Recipes.findIngAndInst(recipe.id)
           .then(ingAndInst => {

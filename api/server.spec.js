@@ -3,7 +3,7 @@ const request = require("supertest");
 const axios = require("axios");
 
 describe("GET /", () => {
-  it("has process .env.DB_ENV as 'testing'", () => {
+  it("has process .env.DB_ENV as 'development'", () => {
     expect(process.env.DB_ENV).toBe("development");
   });
 });
@@ -76,7 +76,7 @@ describe("GET /api/recipes", () => {
 });
 
 // Post recipe
-describe("GET /api/recipes", () => {
+describe("test the endpoint for recipes", () => {
   let user = { username: "tewefewfst", password: "sfewfew" };
   let recipe = {
     recipe_name: "Thai Mango Coconut Pudding",
@@ -88,7 +88,7 @@ describe("GET /api/recipes", () => {
 
     mealtype: 2
   };
-  it("testing Login  user::", () => {
+  it("test adding recipe:", () => {
     return request(server)
       .post("/api/auth/login")
       .send(user)
@@ -103,6 +103,58 @@ describe("GET /api/recipes", () => {
             expect(res.status).toBe(200);
             expect(res.body.message).toBe("added new recipe");
           });
+      });
+  });
+
+  it("testing Update recipe", () => {
+    let recipe = {
+      recipe_name: "Thai Mango Coconut Pudding",
+
+      ingredients: "1",
+      instructions: "1",
+      mealtype: 2
+    };
+    return request(server)
+      .post("/api/auth/login")
+      .send(user)
+      .expect(200)
+      .then(res => {
+        const token = res.body.token;
+        return request(server)
+          .put("/api/auth/user/recipes/10")
+          .set("authorization", token)
+          .send(recipe)
+
+          .then(res => {
+            expect(res.status).toBe(200);
+            expect(res.body).toBe(1);
+          });
+      });
+  });
+
+  it("testing delete recipe", () => {
+    return request(server)
+      .post("/api/auth/login")
+      .send(user)
+      .expect(200)
+      .then(res => {
+        const token = res.body.token;
+        return request(server)
+          .delete("/api/auth/user/recipes/27")
+          .set("authorization", token)
+          .then(res => {
+            expect(res.status).toBe(200);
+            expect(res.body.message).toBe("recipe deleted");
+          });
+      });
+  });
+
+  it("test Get recipe By Id", () => {
+    return request(server)
+      .get("/api/recipes/10")
+      .then(res => {
+        expect(res.status).toBe(200);
+        expect(res.body.ingredients).toBe("1");
       });
   });
 });
