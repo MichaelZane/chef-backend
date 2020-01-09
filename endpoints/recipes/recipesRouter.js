@@ -8,7 +8,6 @@ const Users = require("../login/login-model");
 router.get("/:id", (req, res) => {
   Recipes.findRecipes(req.params.id)
     .then(recipes => {
-      console.log("try", recipes);
       res.status(200).json(recipes);
     })
     .catch(error => {
@@ -23,7 +22,6 @@ router.post("/:id", (req, res) => {
   const { recipe_name, ingredients, instructions } = req.body;
   Users.findById(req.params.id)
     .then(user => {
-      console.log(user);
       if (user) {
         if (
           req.body.recipe_name &&
