@@ -80,12 +80,10 @@ describe("test the endpoint for recipes", () => {
   let user = { username: "tewefewfst", password: "sfewfew" };
   let recipe = {
     recipe_name: "Thai Mango Coconut Pudding",
-
     ingredients:
       "2 large ripe mangoes, 3/4 cup coconut milk (canned or fresh), 1/2 cup water ,2 tbsp gelatin powder,1/4 cup white sugar,Chopped ripe mangoes, to decorate (optional),Glazed cherries, to decorate,Mint leaves, to decorate",
     instructions:
       "Scoop out flesh from the mangoes. Add to a food processor. Process to make a smooth purée. Transfer to a bowl. Add coconut milk. Stir to combine. Set aside.Pour boiling water into a large bowl. Sprinkle gelatin powder over water. Stir to dissolve gelatin. Add sugar. Stir again to dissolve sugar. Add mango-coconut mixture. Stir to combine.Pour into small glasses. Leave to set for about 2 hours in the refrigerator.Decorate with chopped mangoes, halved cherries and mint leaves if you like.",
-
     mealtype: 2
   };
   it("test adding recipe:", () => {
@@ -102,6 +100,35 @@ describe("test the endpoint for recipes", () => {
           .then(res => {
             expect(res.status).toBe(200);
             expect(res.body.message).toBe("added new recipe");
+          });
+      });
+  });
+
+  //  adding recipe with missing field
+
+  it("test adding recipe with missing field:", () => {
+    let recipe1 = {
+      ingredients:
+        "2 large ripe mangoes, 3/4 cup coconut milk (canned or fresh), 1/2 cup water ,2 tbsp gelatin powder,1/4 cup white sugar,Chopped ripe mangoes, to decorate (optional),Glazed cherries, to decorate,Mint leaves, to decorate",
+      instructions:
+        "Scoop out flesh from the mangoes. Add to a food processor. Process to make a smooth purée. Transfer to a bowl. Add coconut milk. Stir to combine. Set aside.Pour boiling water into a large bowl. Sprinkle gelatin powder over water. Stir to dissolve gelatin. Add sugar. Stir again to dissolve sugar. Add mango-coconut mixture. Stir to combine.Pour into small glasses. Leave to set for about 2 hours in the refrigerator.Decorate with chopped mangoes, halved cherries and mint leaves if you like.",
+      mealtype: 2
+    };
+    return request(server)
+      .post("/api/auth/login")
+      .send(user)
+      .expect(200)
+      .then(res => {
+        const token = res.body.token;
+        return request(server)
+          .post("/api/auth/user/2")
+          .set("authorization", token)
+          .send(recipe1)
+          .then(res => {
+            // expect(res.status).toBe(200);
+            // expect(res.body.message).toBe("added new recipe");
+            expect(res.status).toBe(404);
+            expect(res.body.message).toBe("missing some fields");
           });
       });
   });
@@ -145,6 +172,26 @@ describe("test the endpoint for recipes", () => {
           .then(res => {
             expect(res.status).toBe(200);
             expect(res.body.message).toBe("recipe deleted");
+          });
+      });
+  });
+
+  // delete recipe with wrong Id
+  it("testing delete recipe with wrong Id ", () => {
+    return request(server)
+      .post("/api/auth/login")
+      .send(user)
+      .expect(200)
+      .then(res => {
+        const token = res.body.token;
+        return request(server)
+          .delete("/api/auth/user/recipes/200")
+          .set("authorization", token)
+          .then(res => {
+            // expect(res.status).toBe(200);
+            // expect(res.body.message).toBe("recipe deleted");
+            expect(res.status).toBe(404);
+            expect(res.body.message).toBe("no recipe with this id");
           });
       });
   });
