@@ -1,19 +1,52 @@
 const db = require("../../database/db-config.js");
 
+// module.exports = {
+//   findUser,
+//   findById
+// };
+
+// function findUser(username) {
+//   return db("users")
+//     .where({ username })
+//     .first();
+// }
+
+// function findById(id) {
+//   console.log(id);
+//   return db("users")
+//     .where({ id: id })
+//     .first();
+// }
 module.exports = {
-  findUser,
-  findById
+  add,
+  find,
+  findBy,
+  findById,
+  remove
 };
 
-function findUser(username) {
+function add(user) {
   return db("users")
-    .where({ username })
-    .first();
+  .returning(['id', 'username', 'email' ])
+  .insert(user);
+}
+
+function find() {
+  return db("users").select("id", "username", "email");
+}
+
+function findBy(filter) {
+  return db("users").where(filter);
 }
 
 function findById(id) {
-  console.log(id);
   return db("users")
-    .where({ id: id })
+    .where({ id })
     .first();
+}
+
+function remove(id) {
+  return db("users")
+    .where({ id })
+    .del();
 }
